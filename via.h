@@ -19,6 +19,8 @@ public:
     void    setFaixas(int faixas);
     float   getFaixas();
     double getBloqueio();
+    std::vector<Veiculo *> gerarVeiculos(int numeroVeiculos, int minOrigem, int maxOrigem, int minTempo, int maxTempo);
+
 };
 
 #endif // VIA_H

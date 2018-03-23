@@ -43,6 +43,22 @@ double Via::getBloqueio()
     return (calcularPb_num()/calcularPb_denom());
 }
 
+std::vector<Veiculo*> Via::gerarVeiculos(int numeroVeiculos,int minOrigem,int maxOrigem,int minTempo,int maxTempo)
+{
+    Utilidades obj;
+    std::srand(std::time(NULL));
+    std::vector<Veiculo*> veiculos;
+    float origem = 0, tempo = 0;
+    for(int i = 0; i < numeroVeiculos; i++){
+        origem = obj.taxa_origem(rand() % maxOrigem + minOrigem);
+        tempo = obj.tempo_medio(rand() % maxTempo + minTempo);
+        Veiculo *veiculo = new Veiculo(origem,tempo);
+        veiculos.push_back(veiculo);
+
+    }
+    return veiculos;
+}
+
 double Via::calcularPb_denom()
 {
     double _trafego = pow(getTrafego(), getFaixas());

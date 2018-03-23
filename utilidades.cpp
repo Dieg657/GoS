@@ -34,7 +34,6 @@ int Utilidades::taxa_origem(int taxa){
         x *= std::rand() % 100 + 1;
         k++;
     }while(x <= y);
-
     return k;
 }
 
@@ -42,4 +41,28 @@ float Utilidades::tempo_medio(int tempo)
 {
     float duracao = tempo * std::log(std::rand() % 60 + 1);
     return duracao;
+}
+
+std::pair<double,double> Utilidades::calcularMedias(std::vector<Veiculo *> &lista)
+{
+    double mediaOrigem = 0;
+    double mediaTempo = 0;
+    for(unsigned int i = 0;i <
+        lista.size();i++){
+        mediaOrigem += lista[i]->getTxOrigem();
+        mediaTempo += lista[i]->getTmDuracaoVia();
+    }
+    mediaOrigem /= lista.size();
+    mediaTempo /= lista.size();
+    std::pair<double,double> medias(mediaOrigem,mediaTempo);
+    return medias;
+}
+
+void Utilidades::imprimirVeiculos(std::vector<Veiculo *> &lista)
+{
+    for(unsigned int i = 0; i < lista.size();i++){
+        std::cout<<"\nVeiculo " << i <<": "
+                 <<"\nOrigem: " << lista[i]->getTxOrigem()
+                 <<"\nTempo: " << lista[i]->getTmDuracaoVia()<<"\n\n";
+    }
 }
