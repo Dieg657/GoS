@@ -39,6 +39,7 @@ float Via::getFaixas()
 
 double Via::getBloqueio()
 {
+
     return (calcularPb_num()/calcularPb_denom());
 }
 

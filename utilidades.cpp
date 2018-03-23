@@ -19,3 +19,22 @@ unsigned long long Utilidades::fatorial(int x)
     }
     return aux;
 }
+
+
+int Utilidades::origem(int taxa){
+    unsigned int k;
+    long double y, x;
+    std::srand(time(NULL));
+
+    y = std::expm1(taxa);
+    x = 1;
+    k = -1;
+
+    std::cout << "y:" << y << std::endl;
+    do{
+        x *= std::rand() % 100 + 1;
+        k++;
+    }while(x <= y);
+
+    return k;
+}

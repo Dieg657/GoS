@@ -5,13 +5,16 @@
 #include <cstring>
 #include <iomanip>
 #include <fstream>
+#include <chrono>
+#include <random>
+#include <cmath>
+#include "utilidades.h"
 
 class Via;
 class Localidade;
 class Interface;
 
 #include "interface.h"
-#include "utilidades.h"
 #include "localidade.h"
 #include "via.h"
 
