@@ -7,11 +7,13 @@ SOURCES += main.cpp \
     localidade.cpp \
     via.cpp \
     utilidades.cpp \
-    interface.cpp
+    interface.cpp \
+    veiculo.cpp
 
 HEADERS += \
     localidade.h \
     via.h \
     cabecalho.hpp \
     utilidades.h \
-    interface.h
+    interface.h \
+    veiculo.h

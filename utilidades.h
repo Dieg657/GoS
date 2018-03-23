@@ -7,7 +7,8 @@ class Utilidades
 public:
     Utilidades();
     static unsigned long long fatorial(int x);
-    int origem(int taxa);
+    int taxa_origem(int taxa);
+    float tempo_medio(int tempo);
 };
 
 #endif // UTILIDADES_H

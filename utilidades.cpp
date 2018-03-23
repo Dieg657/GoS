@@ -21,7 +21,7 @@ unsigned long long Utilidades::fatorial(int x)
 }
 
 
-int Utilidades::origem(int taxa){
+int Utilidades::taxa_origem(int taxa){
     unsigned int k;
     long double y, x;
     std::srand(time(NULL));
@@ -30,11 +30,16 @@ int Utilidades::origem(int taxa){
     x = 1;
     k = -1;
 
-    std::cout << "y:" << y << std::endl;
     do{
         x *= std::rand() % 100 + 1;
         k++;
     }while(x <= y);
 
     return k;
+}
+
+float Utilidades::tempo_medio(int tempo)
+{
+    float duracao = tempo * std::log(std::rand() % 60 + 1);
+    return duracao;
 }
