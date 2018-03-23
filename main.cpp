@@ -22,19 +22,18 @@ int main()
     myfile.close();*/
 
     Utilidades obj;
-    std::srand(std::time(NULL));
+    std::srand(std::time(nullptr));
     float origem = 0, tempo = 0;
     for(int i = 0; i < 10; i++){
-        //std::cout <<  origem += obj.taxa_origem(rand() % 300 + 30) << std::endl;
-        //std::cout << "Duração: " << tempo += obj.tempo_medio(rand() % 30 + 1) << std::endl;
+
         origem += obj.taxa_origem(rand() % 300 + 30);
-        tempo += obj.tempo_medio(rand() % 30 + 1);
+		tempo += obj.tempo_medio(rand() % 30 + 1);
 
     }
     origem = origem / 10;
     tempo = tempo / 10;
     std::cout << "Origem: " << origem << std::endl;
-    std::cout << "Duração: " << tempo << std::endl;
+    std::cout << "Duracao: " << tempo << std::endl;
     std::cout << std::endl;
     return 0;
 }

@@ -1,6 +1,7 @@
 #ifndef CABECALHO_HPP
 #define CABECALHO_HPP
 #include <iostream>
+#include <locale.h>
 #include <math.h>
 #include <cstring>
 #include <iomanip>
@@ -13,10 +14,12 @@
 class Via;
 class Localidade;
 class Interface;
+class Veiculo;
 
 #include "interface.h"
 #include "localidade.h"
 #include "via.h"
+#include "veiculo.h"
 
 
 
