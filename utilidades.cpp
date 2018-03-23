@@ -5,9 +5,9 @@ Utilidades::Utilidades()
 
 }
 
-unsigned long long Utilidades::fatorial(int x)
+long double Utilidades::fatorial(int x)
 {
-    unsigned long long  aux;
+    long double aux;
     if(x == 0){
         aux = 1;
     }else{
@@ -65,4 +65,37 @@ void Utilidades::imprimirVeiculos(std::vector<Veiculo *> &lista)
                  <<"\nTempo Chegada: " << lista[i]->getTxOrigem()
                  <<"\nTempo Permanencia: " << lista[i]->getTmDuracaoVia()<<"\n\n";
     }
+}
+
+long double Utilidades::calcularBloqueio(int faixa, double erlang){
+    long double bloqueio = 0;
+
+    bloqueio = calcNum(erlang,faixa)/calcDenominador(erlang, faixa);
+
+    return bloqueio;
+}
+
+double Utilidades::calcErlang(double tx_media_p_min, double tx_media_ocupacao_min)
+{
+    double erlang = ((tx_media_p_min / 60) * tx_media_ocupacao_min)/60;
+    return erlang;
+}
+
+long double Utilidades::calcNum(long double erlang, long int qtdFaixa){
+    long double resultado = 0;
+
+    resultado = pow(erlang,qtdFaixa)/fatorial(qtdFaixa);
+
+    return resultado;
+}
+
+long double Utilidades::calcDenominador(double erlang, int faixa)
+{
+    long double resultado = 0;
+
+    for (int i = 0; i < faixa; i++) {
+        resultado += (pow(erlang,i))/fatorial(i);
+    }
+
+    return resultado;
 }

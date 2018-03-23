@@ -50,7 +50,7 @@ void Interface::menu()
         }
 
         case 5:{
-            std::cout << "A taxa de bloqueio e de: " << via->getBloqueio() << "%" << std::endl;
+            //std::cout << "A taxa de bloqueio e de: " << via->getBloqueio() << "%" << std::endl;
             break;
         }
 

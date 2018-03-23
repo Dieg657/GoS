@@ -19,7 +19,7 @@ public:
     void    setFaixas(int faixas);
     float   getFaixas();
     double getBloqueio();
-    std::vector<Veiculo *> gerarVeiculos(int taxaVeiculos, int minTmpChegada, int maxTmpChegada, int minTmpPermanencia, int maxTmpPermanencia);
+    std::vector<Veiculo *> gerarVeiculos(int qtdeIteracoes, int txMinVeiculosPorMinuto, int txMaxVeiculosPorMinuto, int minTmpPermanencia, int maxTmpPermanencia);
 
 };
 
