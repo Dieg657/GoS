@@ -43,16 +43,17 @@ double Via::getBloqueio()
     return (calcularPb_num()/calcularPb_denom());
 }
 
-std::vector<Veiculo*> Via::gerarVeiculos(int numeroVeiculos,int minOrigem,int maxOrigem,int minTempo,int maxTempo)
+std::vector<Veiculo*> Via::gerarVeiculos(int taxaVeiculos, int minTmpChegada, int maxTmpChegada, int minTmpPermanencia, int maxTmpPermanencia)
 {
     Utilidades obj;
     std::srand(std::time(NULL));
     std::vector<Veiculo*> veiculos;
-    float origem = 0, tempo = 0;
-    for(int i = 0; i < numeroVeiculos; i++){
-        origem = obj.taxa_origem(rand() % maxOrigem + minOrigem);
-        tempo = obj.tempo_medio(rand() % maxTempo + minTempo);
-        Veiculo *veiculo = new Veiculo(origem,tempo);
+    float quantidadeVeiculos = 0, tempoChegada = 0,tempoPermanencia;
+    quantidadeVeiculos = obj.taxa_origem(taxaVeiculos);
+    for(int i = 0; i < quantidadeVeiculos; i++){
+        tempoChegada = obj.tempo_medio(rand() % maxTmpChegada + minTmpChegada);
+        tempoPermanencia = obj.tempo_medio(rand() % maxTmpPermanencia + minTmpPermanencia);
+        Veiculo *veiculo = new Veiculo(tempoChegada,tempoPermanencia);
         veiculos.push_back(veiculo);
 
     }

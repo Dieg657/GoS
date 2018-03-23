@@ -62,7 +62,7 @@ void Utilidades::imprimirVeiculos(std::vector<Veiculo *> &lista)
 {
     for(unsigned int i = 0; i < lista.size();i++){
         std::cout<<"\nVeiculo " << i <<": "
-                 <<"\nOrigem: " << lista[i]->getTxOrigem()
-                 <<"\nTempo: " << lista[i]->getTmDuracaoVia()<<"\n\n";
+                 <<"\nTempo Chegada: " << lista[i]->getTxOrigem()
+                 <<"\nTempo Permanencia: " << lista[i]->getTmDuracaoVia()<<"\n\n";
     }
 }

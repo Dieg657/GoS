@@ -38,7 +38,7 @@ int main()
 //    std::cout << std::endl;
 
     Via via;
-    std::vector<Veiculo*> veiculos = via.gerarVeiculos(100,10,300,0,15);
+    std::vector<Veiculo*> veiculos = via.gerarVeiculos(100,1,3,0,5);
     std::pair<double,double> medias = obj.calcularMedias(veiculos);
     obj.imprimirVeiculos(veiculos);
     std::cout<<"Media de origem: " << medias.first<<std::endl;

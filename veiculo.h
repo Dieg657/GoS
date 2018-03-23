@@ -6,7 +6,7 @@
 class Veiculo
 {
 private:
-    float tempo_origem;
+    float tempo_chegada;
     float tm_duracao_via;
 public:
     Veiculo(float tx_orig, float tm_duracao);
